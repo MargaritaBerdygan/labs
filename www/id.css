@@ -1,0 +1,107 @@
+.main{
+    height: 100%;
+    width:100%;
+    background-color: #999999;
+}
+.posts_main_ext{
+
+
+    height: 100%;
+    width:80%;
+    margin-left: 10%;
+    background-color: white;
+}
+
+.posts_main{
+    height: 80%;
+    margin-left: 10%;
+
+    top:10%;
+    width:80%;
+    background-color: #cccccc;
+}
+.latest{
+
+    margin-left: 5%;
+    width:85%;
+    height: 100%;
+}
+.txt{
+    margin-top:20%;
+}
+
+.buttons{
+;
+}
+
+
+.tab_back{margin-top: 20px;
+    margin-left: 20%;
+}
+
+
+.tab {
+    margin-left: 10%;
+    background:white;
+    color: #555555;
+
+}
+.tab button  a{
+    color: #555555;
+    background-color: white;
+}
+
+.tab button.active {
+    background-color: rgba(152,151,149,0.51);
+    border: none;
+}
+.tabcontent {
+    display: none;
+    border-top: none;
+    background-color: white;
+    border: white;
+    height: 70%;
+    width: 80%;
+}
+
+.post_tmp{
+    margin-top: 2%;
+    border-radius: 1%;
+    border: 1px groove rgba(72,71,69,0.30);
+    min-width: 300px;
+    min-height: 150px;
+    background: rgba(152,151,149,0.25);
+}
+/*.post_tmp{*/
+/*    background: rgba(152,151,149,0.21);*/
+/*    width:80%;*/
+/*    min-width: 500px;*/
+/*    border-radius: 5px;*/
+/*    min-height: 150px;*/
+/*}*/
+.tags{
+    margin-top: 3%;
+}
+.autor_data{
+    min-height: 80px;
+    width:100%;
+    margin-left: 25px;
+    margin-top: 4px;
+    display: inline-block;
+}
+.text{
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: left;
+
+}
+.buttons{
+    margin-left: 90%;
+    margin-top:-20px;
+}
+
+.write_post{
+
+}
+

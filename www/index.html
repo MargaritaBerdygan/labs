@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="upper_part_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Eriounios</title>
+</head>
+<body>
+<script>
+
+</script>
+<div class ="upper_menu"  role="banner">
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active" ><img src="logo1.png" class="logo"> </a>
+        <a href="#" onclick="searchModalBox()"><div class="centered_text">Search</div></a>
+        <a href="#contact"><div class="centered_text" >Contact</div> </a>
+        <a href="#about"><div class="centered_text"> About</div> </a>
+        <div class="dropdown">
+
+
+            <!--            do smth with the style!-->
+
+            <img src="q.png"style="border-radius: 50%; margin-top: 4%" >
+
+            <!--            do smth with the style!-->
+
+            <button class="dropbtn" name=" ">
+                guest
+            </button>
+            <div class="dropdown-content">
+                <a href="#" onclick="registerModal()"> Log in / Register</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</div>
+<div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+    <div class="overlay-content">
+        <form method="Get">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit" class="search_submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+<div id="register_box" class="overlay_reg">
+    <span class="closebtn_reg" onclick="closeRegister()" title="Close Register Overlay">×</span>
+    <div class="overlay-content_reg">
+        <div class="tab_back">
+            <div class="tab">
+
+                <button class="tablinks" onclick="openTab(event, 'LoginForm')">Log in</button>
+                <button class="tablinks" onclick="openTab(event, 'RegisterForm')">Register</button>
+            </div>
+            <div id="LoginForm" class="tabcontent" style="display: block">
+                <div class="form_log_field">
+                    <form method="POST" action="http://localhost/site_speedrun/login.php" name="log">
+                        <label>Username</label>
+                        <input type="text" name="username" id = "username">
+                        <label>Password</label>
+                        <input type="password" name="password" id = "password">
+                        <button class="submitbtn" style="margin-left: 10%" > Log in</button>
+                    </form>
+                </div>
+            </div>
+            <div id="RegisterForm" class="tabcontent">
+                <div class="form_reg_field">
+                    <form method="POST" action="http://localhost/site_speedrun/register.php"  name="reg">
+                        <label>Username</label>
+                        <input type="text" id ="name" name="username">
+                        <label>Password</label>
+                        <input type="password" id="newPassword" name="newPassword">
+                        <label>Confirm Password</label>
+                        <input type="password" name="confPassw" id="confPassw">
+                        <button class="submitbtn" style="margin-left: 50%" onclick="Validate()"> Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="app">
+    <div class="inner_app">
+        <div class="main_part">
+
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer" id="contact">
+    <div class="about" id="about">
+        smth smth smth
+    </div>
+    <div class="contact">
+        <a href> gmail.com</a>
+        <a href> some link</a>
+    </div>
+</footer>
+<script>
+
+    function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {x.className += " responsive";}
+    else {x.className = "topnav";}
+    }
+    function searchModalBox() {
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+    }
+    function registerModal() {
+        document.getElementById("register_box").style.display = "block";
+    }
+    function closeRegister() {
+        document.getElementById("register_box").style.display = "none";
+    }
+    function registerOnSite(){
+
+    }
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function Validate(){
+        var username = document.forms['reg']['username'];
+        var password = document.forms['reg']['newPasword'];
+        var pasconf = document.forms['reg']['confPassw'];
+        if(username.length<3){
+            postMessage("username is not long enough");
+        }
+        if(password.length <4){
+            postMessage("password is not long enough");
+        }
+        if(password.localeCompare(pasconf) != 0){
+            postMessage("password wasn't confirmed");
+        }
+        else{
+            return true;
+        }
+    }
+
+</script>
+
+
+</body>
+
+</html>
